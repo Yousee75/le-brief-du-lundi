@@ -8,8 +8,8 @@
     --primary-dark: #2563eb;
     --accent: #10b981;
     --accent-light: #34d399;
-    --text: #1f2937;
-    --text-light: #6b7280;
+    --text: #000000;  /* MODIFIÉ : Noir pour meilleure lisibilité */
+    --text-light: #374151;  /* MODIFIÉ : Gris foncé au lieu de gris clair */
     --background: #ffffff;
     --surface: #f9fafb;
     --surface-glass: rgba(255, 255, 255, 0.8);
@@ -241,7 +241,7 @@ header.scrolled {
 .mobile-menu a {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--text);
+    color: #000000;  /* MODIFIÉ : Noir pour meilleure visibilité */
     text-decoration: none;
     opacity: 0;
     transform: translateY(20px);
@@ -504,7 +504,7 @@ header.scrolled {
 }
 
 .feature-desc {
-    color: var(--text-light);
+    color: var(--text);  /* MODIFIÉ : Utilise la couleur de texte principale (noir) */
     font-size: 0.9rem;
     line-height: 1.6;
 }
@@ -918,22 +918,24 @@ header.scrolled {
     transition: var(--transition);
 }
 
+/* MODIFIÉ : Cartes d'erreur avec fond rouge et texte blanc */
 .info-card.error {
-    background: #fee2e2;
-    border: 1px solid #fecaca;
+    background: #dc2626;
+    border: 1px solid #b91c1c;
 }
 
 .info-card.error::after {
-    background: #dc2626;
+    background: #ffffff;
 }
 
+/* MODIFIÉ : Cartes de succès avec fond vert foncé et texte blanc */
 .info-card.success {
-    background: #d1fae5;
-    border: 1px solid #a7f3d0;
+    background: #059669;
+    border: 1px solid #047857;
 }
 
 .info-card.success::after {
-    background: #059669;
+    background: #ffffff;
 }
 
 .info-card:hover {
@@ -952,6 +954,7 @@ header.scrolled {
     top: 1.5rem;
     font-size: 1.5rem;
     animation: iconPulse 2s ease-in-out infinite;
+    color: #ffffff;  /* AJOUTÉ : Icônes blanches */
 }
 
 @keyframes iconPulse {
@@ -966,12 +969,13 @@ header.scrolled {
     font-weight: 700;
 }
 
+/* MODIFIÉ : Titres blancs pour les cartes colorées */
 .info-card.error h3 {
-    color: #dc2626;
+    color: #ffffff;
 }
 
 .info-card.success h3 {
-    color: #059669;
+    color: #ffffff;
 }
 
 .info-card ul {
@@ -984,6 +988,15 @@ header.scrolled {
     color: var(--text);
     position: relative;
     padding-left: 1.5rem;
+}
+
+/* MODIFIÉ : Texte blanc pour les cartes colorées */
+.info-card.error li {
+    color: #ffffff;
+}
+
+.info-card.success li {
+    color: #ffffff;
 }
 
 .info-card li::before {
@@ -1107,6 +1120,7 @@ header.scrolled {
 
 .exercise-content p {
     margin-bottom: 1.5rem;
+    color: var(--text);  /* AJOUTÉ : Pour s'assurer que le texte est visible */
 }
 
 .exercise-steps {
@@ -1120,6 +1134,7 @@ header.scrolled {
     counter-increment: step;
     line-height: 1.7;
     transition: var(--transition);
+    color: var(--text);  /* AJOUTÉ : Pour s'assurer que le texte est visible */
 }
 
 .exercise-step:hover {
