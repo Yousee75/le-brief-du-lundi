@@ -3,9 +3,9 @@
 > La newsletter qui structure ta progression - Site web officiel
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-success)](https://votre-username.github.io/le-brief-du-lundi/)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) 
 
-## 📋 Description
+## 📋 Description 
 
 Site web moderne et responsive pour "Le Brief du Lundi", une newsletter hebdomadaire axée sur la productivité, l'IA et les méthodes pour mieux penser et travailler. Le site offre une expérience utilisateur immersive avec des animations fluides et une navigation intuitive.
 
