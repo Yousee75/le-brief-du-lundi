@@ -3,7 +3,7 @@
 > La newsletter qui structure ta progression - Site web officiel
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-success)](https://votre-username.github.io/le-brief-du-lundi/)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) 
 
 ## 📋 Description
 
