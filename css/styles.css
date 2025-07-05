@@ -1,5 +1,6 @@
 /* ===================================
    Le Brief du Lundi - Styles Principaux
+   Version finale avec tous les contrastes corrigés
    =================================== */
 
 /* Variables CSS */
@@ -8,11 +9,12 @@
     --primary-dark: #2563eb;
     --accent: #10b981;
     --accent-light: #34d399;
-    --text: #000000;  /* MODIFIÉ : Noir pour meilleure lisibilité */
-    --text-light: #374151;  /* MODIFIÉ : Gris foncé au lieu de gris clair */
+    --text: #1a1a1a;  /* Noir doux pour meilleure lisibilité */
+    --text-light: #4b5563;  /* Gris foncé pour bon contraste */
+    --text-muted: #6b7280;  /* Pour les textes tertiaires */
     --background: #ffffff;
     --surface: #f9fafb;
-    --surface-glass: rgba(255, 255, 255, 0.8);
+    --surface-glass: rgba(255, 255, 255, 0.95);
     --pink: #fbbf24;
     --purple: #a78bfa;
     --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -37,10 +39,11 @@
     --primary: #60a5fa;
     --primary-dark: #3b82f6;
     --text: #f3f4f6;
-    --text-light: #d1d5db;
+    --text-light: #e5e7eb;
+    --text-muted: #9ca3af;
     --background: #0f172a;
     --surface: #1e293b;
-    --surface-glass: rgba(30, 41, 59, 0.8);
+    --surface-glass: rgba(30, 41, 59, 0.95);
     --shadow: 0 10px 25px rgba(0,0,0,0.3);
     --shadow-colored: 0 10px 40px rgba(96, 165, 250, 0.2);
 }
@@ -75,6 +78,35 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: -0.02em;
+    color: var(--text);
+}
+
+p {
+    color: var(--text);
+    font-weight: 500;
+}
+
+/* Links */
+a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Selection */
+::selection {
+    background: var(--primary);
+    color: white;
+}
+
+/* Focus visible pour l'accessibilité */
+:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
 }
 
 /* Custom Cursor */
@@ -137,7 +169,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
     transition: var(--transition);
 }
 
@@ -241,7 +273,7 @@ header.scrolled {
 .mobile-menu a {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #000000;  /* MODIFIÉ : Noir pour meilleure visibilité */
+    color: var(--text);
     text-decoration: none;
     opacity: 0;
     transform: translateY(20px);
@@ -401,6 +433,7 @@ header.scrolled {
     margin-bottom: 0.8rem;
     font-size: 0.95rem;
     line-height: 1.7;
+    font-weight: 500;
 }
 
 .hero-intro strong {
@@ -419,6 +452,7 @@ header.scrolled {
     margin-bottom: 0.5rem;
     color: rgba(255,255,255,0.9);
     font-size: 0.95rem;
+    font-weight: 500;
 }
 
 .read-more {
@@ -504,9 +538,10 @@ header.scrolled {
 }
 
 .feature-desc {
-    color: var(--text);  /* MODIFIÉ : Utilise la couleur de texte principale (noir) */
+    color: var(--text);
     font-size: 0.9rem;
     line-height: 1.6;
+    font-weight: 500;
 }
 
 .carousel-dots {
@@ -652,6 +687,7 @@ header.scrolled {
 .section-header p {
     color: var(--text-light);
     margin-top: 1rem;
+    font-weight: 500;
 }
 
 /* Summary Cards */
@@ -670,7 +706,7 @@ header.scrolled {
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    border: 1px solid transparent;
+    border: 1px solid rgba(0,0,0,0.08);
 }
 
 .summary-card::before {
@@ -722,12 +758,13 @@ header.scrolled {
 
 .card-number {
     background: var(--surface);
-    color: var(--text-light);
+    color: var(--text);
     font-size: 0.8rem;
     padding: 4px 12px;
     border-radius: 20px;
     font-weight: 600;
     transition: var(--transition);
+    border: 1px solid rgba(0,0,0,0.1);
 }
 
 .summary-card:hover .card-number {
@@ -748,6 +785,7 @@ header.scrolled {
     font-size: 0.9rem;
     margin-bottom: 1rem;
     line-height: 1.5;
+    font-weight: 500;
 }
 
 .card-exercise {
@@ -851,6 +889,11 @@ header.scrolled {
     transition: var(--transition);
 }
 
+/* Mode sombre - correction pour main-content */
+[data-theme="dark"] .main-content {
+    background: var(--surface);
+}
+
 .main-content:hover {
     box-shadow: var(--shadow);
     transform: translateY(-2px);
@@ -876,6 +919,7 @@ header.scrolled {
     margin-bottom: 1rem;
     line-height: 1.8;
     color: var(--text);
+    font-weight: 500;
 }
 
 .main-content strong {
@@ -904,6 +948,13 @@ header.scrolled {
     padding-left: 4rem;
     transition: var(--transition);
     overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* Mode sombre - correction pour info-card */
+[data-theme="dark"] .info-card {
+    background: var(--surface);
+    border-color: rgba(255,255,255,0.1);
 }
 
 .info-card::after {
@@ -918,20 +969,20 @@ header.scrolled {
     transition: var(--transition);
 }
 
-/* MODIFIÉ : Cartes d'erreur avec fond rouge et texte blanc */
+/* CORRIGÉ : Cartes d'erreur avec fond rouge foncé et texte blanc */
 .info-card.error {
-    background: #dc2626;
-    border: 1px solid #b91c1c;
+    background: #991b1b;  /* Rouge foncé pour meilleur contraste */
+    border: 1px solid #7f1d1d;
 }
 
 .info-card.error::after {
     background: #ffffff;
 }
 
-/* MODIFIÉ : Cartes de succès avec fond vert foncé et texte blanc */
+/* CORRIGÉ : Cartes de succès avec fond vert foncé et texte blanc */
 .info-card.success {
-    background: #059669;
-    border: 1px solid #047857;
+    background: #047857;  /* Vert plus foncé pour meilleur contraste */
+    border: 1px solid #065f46;
 }
 
 .info-card.success::after {
@@ -954,7 +1005,13 @@ header.scrolled {
     top: 1.5rem;
     font-size: 1.5rem;
     animation: iconPulse 2s ease-in-out infinite;
-    color: #ffffff;  /* AJOUTÉ : Icônes blanches */
+    color: var(--text);  /* Par défaut */
+}
+
+/* Icônes blanches pour les cartes colorées */
+.info-card.error .info-card-icon,
+.info-card.success .info-card-icon {
+    color: #ffffff;
 }
 
 @keyframes iconPulse {
@@ -969,11 +1026,8 @@ header.scrolled {
     font-weight: 700;
 }
 
-/* MODIFIÉ : Titres blancs pour les cartes colorées */
-.info-card.error h3 {
-    color: #ffffff;
-}
-
+/* Titres blancs pour les cartes colorées */
+.info-card.error h3,
 .info-card.success h3 {
     color: #ffffff;
 }
@@ -988,13 +1042,11 @@ header.scrolled {
     color: var(--text);
     position: relative;
     padding-left: 1.5rem;
+    font-weight: 500;
 }
 
-/* MODIFIÉ : Texte blanc pour les cartes colorées */
-.info-card.error li {
-    color: #ffffff;
-}
-
+/* Texte blanc pour les cartes colorées */
+.info-card.error li,
 .info-card.success li {
     color: #ffffff;
 }
@@ -1089,6 +1141,11 @@ header.scrolled {
     overflow-y: auto;
 }
 
+/* Mode sombre - correction pour exercise-modal */
+[data-theme="dark"] .exercise-modal {
+    background: var(--surface);
+}
+
 .exercise-modal.active {
     transform: translateY(0);
 }
@@ -1096,7 +1153,7 @@ header.scrolled {
 .modal-handle {
     width: 40px;
     height: 4px;
-    background: var(--text-light);
+    background: var(--text-muted);
     border-radius: 2px;
     margin: 0 auto 1.5rem;
     cursor: grab;
@@ -1120,7 +1177,8 @@ header.scrolled {
 
 .exercise-content p {
     margin-bottom: 1.5rem;
-    color: var(--text);  /* AJOUTÉ : Pour s'assurer que le texte est visible */
+    color: var(--text);
+    font-weight: 500;
 }
 
 .exercise-steps {
@@ -1134,7 +1192,8 @@ header.scrolled {
     counter-increment: step;
     line-height: 1.7;
     transition: var(--transition);
-    color: var(--text);  /* AJOUTÉ : Pour s'assurer que le texte est visible */
+    color: var(--text);
+    font-weight: 500;
 }
 
 .exercise-step:hover {
@@ -1210,6 +1269,11 @@ header.scrolled {
     margin-bottom: 1rem;
 }
 
+.tool-card p {
+    color: var(--text);
+    font-weight: 500;
+}
+
 .tool-features {
     display: flex;
     flex-direction: column;
@@ -1225,7 +1289,7 @@ header.scrolled {
     align-items: flex-start;
     gap: 1rem;
     transition: var(--transition);
-    border: 1px solid transparent;
+    border: 1px solid rgba(0,0,0,0.08);
 }
 
 .tool-feature:hover {
@@ -1238,6 +1302,17 @@ header.scrolled {
     font-size: 1.5rem;
     flex-shrink: 0;
     animation: float 3s ease-in-out infinite;
+}
+
+.tool-feature h4 {
+    color: var(--text);
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+}
+
+.tool-feature p {
+    color: var(--text-light);
+    font-weight: 500;
 }
 
 .use-cases {
@@ -1254,7 +1329,7 @@ header.scrolled {
     position: relative;
     padding-left: 3rem;
     transition: var(--transition);
-    border: 1px solid transparent;
+    border: 1px solid rgba(0,0,0,0.08);
 }
 
 .use-case:hover {
@@ -1271,6 +1346,17 @@ header.scrolled {
     animation: wiggle 3s ease-in-out infinite;
 }
 
+.use-case h4 {
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.use-case p {
+    color: var(--text-light);
+    font-weight: 500;
+}
+
 /* Theme Toggle */
 .theme-toggle {
     position: fixed;
@@ -1278,10 +1364,9 @@ header.scrolled {
     right: 20px;
     width: 50px;
     height: 50px;
-    background: var(--surface-glass);
-    backdrop-filter: blur(10px);
+    background: var(--background);
+    border: 2px solid var(--primary);
     border-radius: 50%;
-    border: none;
     box-shadow: var(--shadow);
     cursor: pointer;
     display: flex;
@@ -1406,14 +1491,20 @@ footer h2 {
 }
 
 footer p {
-    color: var(--text-light);
+    color: var(--text);  /* CORRIGÉ : Utilise le texte principal */
     line-height: 1.7;
     max-width: 600px;
     margin: 0 auto;
+    font-weight: 500;
 }
 
 footer p:not(:last-child) {
     margin-bottom: 1rem;
+}
+
+footer a {
+    color: var(--primary);
+    font-weight: 600;
 }
 
 /* Modal Overlay */
@@ -1465,6 +1556,11 @@ footer p:not(:last-child) {
 @keyframes rotate {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+.highlight-box p {
+    color: white !important;  /* Assure le texte blanc dans les highlight boxes */
+    font-weight: 500;
 }
 
 /* Loading Animation */
@@ -1519,6 +1615,24 @@ footer p:not(:last-child) {
     height: 300px;
 }
 
+/* Ajustements supplémentaires pour le mode sombre */
+[data-theme="dark"] .summary-card,
+[data-theme="dark"] .tool-feature,
+[data-theme="dark"] .use-case {
+    background: var(--surface);
+    border-color: rgba(255,255,255,0.1);
+}
+
+[data-theme="dark"] .card-number {
+    background: var(--surface);
+    border-color: rgba(255,255,255,0.2);
+}
+
+[data-theme="dark"] .card-exercise {
+    background: var(--background);
+    border-color: rgba(96, 165, 250, 0.2);
+}
+
 /* Print Styles */
 @media print {
     .theme-toggle,
@@ -1526,5 +1640,20 @@ footer p:not(:last-child) {
     .menu-toggle,
     .exercise-button {
         display: none !important;
+    }
+    
+    body {
+        color: #000000 !important;
+        background: #ffffff !important;
+    }
+    
+    .content-section,
+    .summary-section,
+    footer {
+        background: #ffffff !important;
+    }
+    
+    p, li, span {
+        color: #000000 !important;
     }
 }
