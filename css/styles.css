@@ -5,8 +5,8 @@
 
 /* Variables CSS */
 :root {
-    --primary: #3b82f6;
-    --primary-dark: #2563eb;
+    --primary: #2563eb;      /* bleu plus sombre  ➜ meilleur contraste */
+    --primary-dark: #1d4ed8; /* encore un cran plus foncé, pour les liens */
     --accent: #10b981;
     --accent-light: #34d399;
     --text: #1a1a1a;  /* Noir doux pour meilleure lisibilité */
@@ -47,6 +47,13 @@
     --shadow: 0 10px 25px rgba(0,0,0,0.3);
     --shadow-colored: 0 10px 40px rgba(96, 165, 250, 0.2);
 }
+
+/* Liens et anchors 100 % lisibles */
+a,
+.card-link {
+  color: var(--primary-dark);
+}
+
 
 /* Reset & Base Styles */
 * {
@@ -343,8 +350,7 @@ header.scrolled {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 50%);
+    background: rgba(0,0,0,0.35); /* voile sombre homogène */
 }
 
 @keyframes move {
@@ -394,11 +400,32 @@ header.scrolled {
 
 .hero-subtitle {
     font-size: 1.2rem;
-    color: rgba(255,255,255,0.9);
+    color: #ffffff;
     margin-bottom: 2rem;
     font-weight: 400;
     text-shadow: 0 1px 5px rgba(0,0,0,0.1);
 }
+
+/* Poignée de la modal : plus dense */
+.modal-handle {
+  background: var(--text); /* #1a1a1a */
+  height: 6px;             /* un peu plus épais */
+}
+
+/* Points de carrousel plus visibles */
+.dot          { background: rgba(255,255,255,0.6); }
+.dot.active   { background: #ffffff; }
+
+/* Poignée de la modal : plus dense */
+.modal-handle {
+  background: var(--text); /* #1a1a1a */
+  height: 6px;             /* un peu plus épais */
+}
+
+/* Points de carrousel plus visibles */
+.dot          { background: rgba(255,255,255,0.6); }
+.dot.active   { background: #ffffff; }
+
 
 .hero-intro {
     background: rgba(255,255,255,0.1);
@@ -591,8 +618,8 @@ header.scrolled {
 /* CTA Button */
 .cta-button {
     display: inline-block;
-    background: white;
-    color: var(--primary);
+    background: var(--primary-dark);
+    color: #ffffff;
     padding: 16px 32px;
     border-radius: 30px;
     font-weight: 600;
@@ -688,6 +715,13 @@ header.scrolled {
     color: var(--text-light);
     margin-top: 1rem;
     font-weight: 500;
+}
+
+/* Lisibilité renforcée sur badge et read-more */
+.read-more,
+.hero-badge {
+  background: var(--primary-dark); /* fond coloré */
+  color: #ffffff;                  /* texte blanc net */
 }
 
 /* Summary Cards */
@@ -1656,8 +1690,4 @@ footer a {
     p, li, span {
         color: #000000 !important;
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 56465051c7c55cdb79062d37e24d0c06457b7adf
