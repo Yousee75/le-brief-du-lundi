@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Le Brief du Lundi - La newsletter qui structure ta progression. Productivité, IA et méthodes pour mieux penser.">
+    <meta name="author" content="Le Brief du Lundi">
+    <meta property="og:title" content="Le Brief du Lundi">
+    <meta property="og:description" content="La newsletter qui structure ta progression">
+    <meta property="og:type" content="website">
+    
+    <title>Le Brief du Lundi - La newsletter qui structure ta progression</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="logo" onclick="scrollToTop()">
+            <span class="logo-emoji">📨</span>
+            <span>Le Brief du Lundi</span>
+        </div>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="#vision" onclick="closeMenu()">🚗 Vision</a>
+        <a href="#copier" onclick="closeMenu()">🪞 Modèles</a>
+        <a href="#discipline" onclick="closeMenu()">🧬 Discipline</a>
+        <a href="#growth" onclick="closeMenu()">🌱 Croissance</a>
+        <a href="#entourage" onclick="closeMenu()">🤝 Entourage</a>
+        <a href="#mental" onclick="closeMenu()">🧼 Mental</a>
+        <a href="#corps" onclick="closeMenu()">🏃‍♂️ Corps</a>
+        <a href="#prix" onclick="closeMenu()">🎢 Prix</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <div class="hero-badge">📩 Chaque lundi dans ta boîte mail</div>
+            <h1 data-aos="fade-up" data-aos-delay="100">Le Brief du Lundi</h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">La newsletter qui structure ta progression</p>
+            
+            <div class="hero-intro" id="heroIntro" data-aos="fade-up" data-aos-delay="300">
+                <h3>✉️ Pourquoi j'écris Le Brief du Lundi</h3>
+                <p>Depuis plusieurs mois, je consacre du temps chaque semaine à lire, écouter, tester et structurer des contenus autour de trois grands piliers : <strong>la productivité, l'IA, et les méthodes pour mieux penser et mieux travailler.</strong></p>
+                <p>Plutôt que de garder tout ça pour moi, j'ai eu envie de partager ce qui me semble vraiment utile. Pas sous forme de résumés impersonnels ou de listes indigestes, mais à travers une newsletter claire, humaine, et tournée vers l'action.</p>
+                <p><strong>Le Brief du Lundi, c'est un rendez-vous hebdomadaire pour démarrer ta semaine avec plus de clarté, de méthode et de recul.</strong> Tu y trouveras :</p>
+                <ul>
+                    <li>→ des <strong>outils</strong> (notamment en IA) que j'utilise au quotidien et que tu peux tester directement ;</li>
+                    <li>→ des <strong>idées ou extraits inspirants</strong>, tirés de podcasts, livres ou contenus que j'analyse pour t'en donner l'essentiel ;</li>
+                    <li>→ des <strong>techniques concrètes</strong> pour mieux gérer ton attention, tes projets, ou simplement progresser à ton rythme.</li>
+                </ul>
+                <p>Mon objectif n'est pas de motiver à tout prix, ni de vendre des routines miracles, mais de t'apporter <strong>un point de repère fiable dans ta semaine</strong> : un espace pour réfléchir, t'équiper, et avancer avec plus de cohérence dans un monde qui va vite.</p>
+                <p>C'est ce que je fais pour moi, chaque semaine. Et maintenant, je le partage avec toi.</p>
+            </div>
+            <button class="read-more" onclick="toggleIntro(event)">Lire plus</button>
+
+            <!-- Features Carousel -->
+            <div class="features-carousel" data-aos="fade-up" data-aos-delay="400">
+                <div class="features-wrapper" id="featuresWrapper">
+                    <div class="feature-card">
+                        <div class="feature-icon">💡</div>
+                        <h3 class="feature-title">Idées fortes</h3>
+                        <p class="feature-desc">Pour ajuster ta façon de penser et de décider</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛠️</div>
+                        <h3 class="feature-title">Outils concrets</h3>
+                        <p class="feature-desc">Des méthodes à tester immédiatement</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📍</div>
+                        <h3 class="feature-title">Repères clairs</h3>
+                        <p class="feature-desc">Pour mieux cadrer ta semaine</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✍️</div>
+                        <h3 class="feature-title">Exercices courts</h3>
+                        <p class="feature-desc">Pour passer à l'action immédiatement</p>
+                    </div>
+                </div>
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="goToSlide(0)"></span>
+                    <span class="dot" onclick="goToSlide(1)"></span>
+                    <span class="dot" onclick="goToSlide(2)"></span>
+                    <span class="dot" onclick="goToSlide(3)"></span>
+                </div>
+            </div>
+
+            <a href="#summary" class="cta-button" data-aos="fade-up" data-aos-delay="500"><span>Découvrir le programme</span></a>
+        </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="summary-section" id="summary">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Au programme cette semaine</h2>
+            <p>8 thèmes essentiels pour reprendre le contrôle</p>
+        </div>
+
+        <div class="summary-cards">
+            <!-- Card 1 -->
+            <div class="summary-card touchable" onclick="toggleCard(this)" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-header">
+                    <span class="card-emoji">🚗</span>
+                    <span class="card-number">1/8</span>
+                </div>
+                <h3 class="card-title">Avoir un cap</h3>
+                <p class="card-subtitle">Mieux orienter tes efforts</p>
+                <div class="card-exercise">
+                    <strong>Exercice :</strong> Clarifie ton cap - écris pourquoi tu fais ce que tu fais et vérifie si tes actions y mènent
+                    <a href="#vision" class="card-link">→ Lire le chapitre complet</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="summary-card touchable" onclick="toggleCard(this)" data-aos="fade-up" data-aos-delay="150">
+                <div class="card-header">
+                    <span class="card-emoji">🪞</span>
+                    <span class="card-number">2/8</span>
+                </div>
+                <h3 class="card-title">Copier intelligemment</h3>
+                <p class="card-subtitle">Partir de modèles clairs pour te construire</p>
+                <div class="card-exercise">
+                    <strong>Exercice :</strong> Modèle 7 jours - applique 3 habitudes d'une personne inspirante et observe
+                    <a href="#copier" class="card-link">→ Lire le chapitre complet</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="summary-card touchable" onclick="toggleCard(this)" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-header">
+                    <span class="card-emoji">🧬</span>
+                    <span class="card-number">3/8</span>
+                </div>
+                <h3 class="card-title">Discipline & identité</h3>
+                <p class="card-subtitle">Agir par alignement, pas par contrainte</p>
+                <div class="card-exercise">
+                    <strong>Exercice :</strong> Change de langage - reformule "je dois" en "je suis quelqu'un qui..."
+                    <a href="#discipline" class="card-link">→ Lire le chapitre complet</a>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="summary-card touchable" onclick="toggleCard(this)" data-aos="fade-up" data-aos-delay="250">
+                <div class="card-header">
+                    <span class="card-emoji">🌱</span>
+                    <span class="card-number">4/8</span>
+                </div>
+                <h3 class="card-title">Croissance</h3>
+                <p class="card-subtitle">Maintenir l'élan malgré les blocages</p>
+                <div class="card-exercise">
+                    <strong>Exercice :</strong> Le "pas encore" - ajoute ces mots pour transformer l'échec en processus
+                    <a href="#growth" class="card-link">→ Lire le chapitre complet</a>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="summary-card touchable" onclick="toggleCard(this)" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-header">
+                    <span class="card-emoji">🤝</span>
+                    <span class="card-number">5/8</span>
+                </div>
+                <h3 class="card-title">Entourage</h3>
+                <p class="card-subtitle">T'entourer de personnes qui soutiennent ton élan</p>
+                <div class="card-exercise">
+                    <strong>Exercice :</strong> Connexion utile - reprends contact avec quelqu'un qui t'élève
+                    <a href="#entourage" class="card-link">→ Lire le chapitre complet</a>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="summary-card touchable" onclick="toggleCard(this)" data-aos="fade-up" data-aos-delay="350">
+                <div class="card-header">
+                    <span class="card-emoji">🧼</span>
+                    <span class="card-number">6/8</span>
+                </div>
+                <h3 class="card-title">Espace mental</h3>
+                <p class="card-subtitle">Réduire le bruit pour penser plus clairement</p>
+                <div class="card-exercise">
+                    <strong>Exercice :</strong> Nettoyage ciblé - élimine une source de surcharge pour la semaine
+                    <a href="#mental" class="card-link">→ Lire le chapitre complet</a>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="summary-card touchable" onclick="toggleCard(this)" data-aos="fade-up" data-aos-delay="400">
+                <div class="card-header">
+                    <span class="card-emoji">🏃‍♂️</span>
+                    <span class="card-number">7/8</span>
+                </div>
+                <h3 class="card-title">Mouvement physique</h3>
+                <p class="card-subtitle">Relancer ton système par le corps</p>
+                <div class="card-exercise">
+                    <strong>Exercice :</strong> Marche sans objectif - marche 15 min sans distraction et observe ce qui émerge
+                    <a href="#corps" class="card-link">→ Lire le chapitre complet</a>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="summary-card touchable" onclick="toggleCard(this)" data-aos="fade-up" data-aos-delay="450">
+                <div class="card-header">
+                    <span class="card-emoji">🎢</span>
+                    <span class="card-number">8/8</span>
+                </div>
+                <h3 class="card-title">Prix du changement</h3>
+                <p class="card-subtitle">Accepter qu'avancer demande de lâcher</p>
+                <div class="card-exercise">
+                    <strong>Exercice :</strong> Équation personnelle - choisis une chose à mettre à distance 7 jours
+                    <a href="#prix" class="card-link">→ Lire le chapitre complet</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="content-section" id="vision">
+        <div class="content-header" data-aos="fade-right">
+            <span class="content-emoji">🚗</span>
+            <h2 class="content-title">Sans boussole, le moteur s'épuise</h2>
+        </div>
+
+        <div class="main-content" data-aos="fade-up">
+            <p>Tu peux avoir de l'élan, des routines bien installées, une réelle envie d'avancer.</p>
+            <p>Mais si tu ne sais pas clairement pourquoi tu fais tout ça, tu risques de t'épuiser.</p>
+            <p>L'effort, en soi, ne suffit pas.</p>
+            <p>Sans cap précis, tu avances à l'aveugle.</p>
+            <p>Tu t'actives, tu remplis tes journées... mais tu te disperses.</p>
+            <p>Et petit à petit, tu t'éloignes de ce qui compte vraiment.</p>
+            <p><strong>Ce qui manque, ce n'est pas la motivation. C'est la clarté.</strong></p>
+            <p>Un point de référence. Une direction suffisamment nette pour filtrer, prioriser, et parfois, renoncer.</p>
+            <p>À partir de là, les choses s'alignent : tu choisis au lieu d'accumuler, tu vises au lieu de réagir.</p>
+            <p>Moins de dispersion, plus d'impact.</p>
+            <p>Tu n'as pas besoin de forcer davantage.</p>
+            <p>Tu as besoin de mieux voir ce que tu veux construire.</p>
+            <p>Et quand ce cap est posé, tu avances avec plus de cohérence, plus de calme, plus de solidité.</p>
+            <p>C'est souvent ce petit réajustement invisible qui fait, au fond, toute la différence.</p>
+        </div>
+
+        <div class="info-cards">
+            <div class="info-card error" data-aos="fade-right">
+                <span class="info-card-icon">❌</span>
+                <h3>Les erreurs à éviter</h3>
+                <ul>
+                    <li>Te lancer dans des actions parce qu'elles "ont l'air bien", sans cap précis</li>
+                    <li>Suivre des routines à la chaîne sans te demander si elles te servent vraiment</li>
+                    <li>Garder ton "pourquoi" flou, dans ta tête, sans jamais le poser clairement</li>
+                </ul>
+            </div>
+            <div class="info-card success" data-aos="fade-left">
+                <span class="info-card-icon">✅</span>
+                <h3>Ce que ça te permet</h3>
+                <ul>
+                    <li>Savoir à quoi dire non sans culpabiliser</li>
+                    <li>Repartir plus vite quand tu perds le rythme</li>
+                    <li>Sentir que ce que tu fais te rapproche de quelque chose qui compte pour toi</li>
+                </ul>
+            </div>
+        </div>
+
+        <button class="exercise-button" onclick="openExercise(event)">📝 Voir l'exercice</button>
+
+        <div class="exercise-modal" data-aos="fade-up">
+            <div class="modal-handle"></div>
+            <div class="exercise-content">
+                <h3>📝 Exercice simple — Trouve ton cap</h3>
+                <p>L'objectif ici n'est pas de trouver une formule parfaite, mais une direction suffisamment claire pour guider tes décisions au quotidien.</p>
+                <div class="exercise-steps">
+                    <div class="exercise-step">Prends quelques minutes pour écrire plusieurs fois cette phrase : <strong>« Je fais tout ça parce que... »</strong> Note librement, sans chercher à bien formuler. Laisse venir ce qui te semble juste sur le moment.</div>
+                    <div class="exercise-step">Relis tes réponses et identifie celle qui te parle le plus aujourd'hui.</div>
+                    <div class="exercise-step">Reformule cette idée en <strong>une seule phrase claire et essentielle</strong>. Une phrase qui puisse t'accompagner comme un repère simple et stable.</div>
+                    <div class="exercise-step">Garde cette phrase visible : sur ton bureau, dans ton carnet, sur ton fond d'écran. Peu importe l'endroit, tant qu'elle reste à portée de regard.</div>
+                    <div class="exercise-step">Pendant une semaine, pose-toi cette question chaque jour : 👉 <strong>« Est-ce que ce que je fais aujourd'hui me rapproche de ça ? »</strong></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box" data-aos="zoom-in">
+            Tu n'as pas besoin d'en faire plus. Tu as besoin de mieux comprendre pourquoi tu fais ce que tu fais. Une fois ce cap clarifié, le reste s'aligne.
+        </div>
+    </section>
+
+    <!-- Copier Section -->
+    <section class="content-section" id="copier">
+        <div class="content-header" data-aos="fade-right">
+            <span class="content-emoji">🪞</span>
+            <h2 class="content-title">Copier d'abord, pour construire ensuite</h2>
+        </div>
+
+        <div class="main-content" data-aos="fade-up">
+            <p>Tu veux progresser, trouver ta propre manière de faire, créer un cadre qui te ressemble.</p>
+            <p>Mais pour construire quelque chose de personnel, tu dois d'abord t'appuyer sur ce qui a déjà fait ses preuves.</p>
+            <p>Ceux qui avancent vite ne réinventent pas tout.</p>
+            <p>Ils commencent par observer. Comprendre les structures, les enchaînements, les routines efficaces.</p>
+            <p>Ils s'inspirent de ce qui fonctionne, pas pour le recopier, mais pour bâtir plus vite et plus juste.</p>
+            <p><strong>Copier intelligemment, au départ, ce n'est pas un aveu de faiblesse.</strong></p>
+            <p>C'est une stratégie d'apprentissage.</p>
+            <p>Tu poses des fondations solides, tu explores des modèles clairs, tu gagnes en lisibilité.</p>
+            <p>Et une fois que tu as compris les mécaniques, tu ajustes. Tu simplifies. Tu adaptes.</p>
+            <p>C'est à ce moment-là que ton fonctionnement devient vraiment le tien — parce qu'il repose sur des bases maîtrisées, pas sur de l'improvisation.</p>
+        </div>
+
+        <div class="info-cards">
+            <div class="info-card error" data-aos="fade-right">
+                <span class="info-card-icon">❌</span>
+                <h3>Les erreurs à éviter</h3>
+                <ul>
+                    <li>Vouloir être "original" tout de suite, sans base claire</li>
+                    <li>Copier à l'aveugle sans comprendre le pourquoi derrière</li>
+                    <li>Se comparer en pensant que tu devrais déjà y être</li>
+                </ul>
+            </div>
+            <div class="info-card success" data-aos="fade-left">
+                <span class="info-card-icon">✅</span>
+                <h3>Ce que ça te permet</h3>
+                <ul>
+                    <li>Gagner du temps en t'appuyant sur des modèles solides</li>
+                    <li>Comprendre les vrais leviers derrière une progression</li>
+                    <li>Poser une base claire avant de personnaliser ce que tu fais</li>
+                </ul>
+            </div>
+        </div>
+
+        <button class="exercise-button" onclick="openExercise(event)">📝 Voir l'exercice</button>
+
+        <div class="exercise-modal" data-aos="fade-up">
+            <div class="modal-handle"></div>
+            <div class="exercise-content">
+                <h3>📝 Exercice — 7 jours pour tester un modèle</h3>
+                <p>L'objectif ici n'est pas de copier à vie, mais d'expérimenter un cadre existant pour mieux comprendre ce qui peut te convenir.</p>
+                <div class="exercise-steps">
+                    <div class="exercise-step"><strong>Choisis une personne ou une méthode</strong> que tu considères comme un repère fiable : pas forcément idéale, mais cohérente avec ce que tu veux construire.</div>
+                    <div class="exercise-step"><strong>Identifie 3 de ses habitudes ou routines clés</strong> : des gestes, des enchaînements, des principes simples et observables.</div>
+                    <div class="exercise-step"><strong>Applique-les à l'identique pendant 7 jours</strong>, sans les modifier. L'idée est de sortir de tes repères habituels pour voir ce que ça produit.</div>
+                    <div class="exercise-step"><strong>En fin de semaine, fais un point :</strong><br>
+                    — Qu'est-ce qui t'a aidé ?<br>
+                    — Qu'est-ce qui a bloqué ?<br>
+                    — Qu'est-ce que tu peux garder, ajuster ou abandonner ?</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box" data-aos="zoom-in">
+            Tu ne vas pas rester une copie. Mais t'appuyer sur ce qui existe, c'est souvent le meilleur point de départ pour te construire avec solidité.
+        </div>
+    </section>
+
+    <!-- Discipline Section -->
+    <section class="content-section" id="discipline">
+        <div class="content-header" data-aos="fade-right">
+            <span class="content-emoji">🧬</span>
+            <h2 class="content-title">Discipline : cesse de faire, commence à être</h2>
+        </div>
+
+        <div class="main-content" data-aos="fade-up">
+            <p>Tant que tu considères la discipline comme une série d'actions à répéter par volonté, elle reste fragile.</p>
+            <p>Tu te dis : "il faut que je m'y mette", "je dois m'organiser", mais l'élan s'essouffle vite.</p>
+            <p>Parce que tu fonctionnes encore sur l'obligation. Pas sur l'alignement.</p>
+            <p><strong>La discipline durable ne demande pas plus d'effort.</strong></p>
+            <p>Elle demande un changement de perspective.</p>
+            <p>Quand tu ne te contentes plus de faire certaines choses, mais que tu commences à te voir comme quelqu'un qui fonctionne ainsi, tout devient plus simple.</p>
+            <p>Tu ne suis plus une méthode. Tu incarnes un cadre.</p>
+            <p>Et à partir de là, tu n'as plus besoin de forcer chaque décision. Tu agis naturellement dans la continuité de qui tu es devenu.</p>
+            <p>Ce n'est pas une affaire de rigidité. C'est une affaire d'identité structurée.</p>
+        </div>
+
+        <div class="info-cards">
+            <div class="info-card error" data-aos="fade-right">
+                <span class="info-card-icon">❌</span>
+                <h3>Les erreurs à éviter</h3>
+                <ul>
+                    <li>T'attacher à des to-do sans jamais réfléchir à qui tu veux devenir</li>
+                    <li>Te juger dès que tu rates une journée ou une routine</li>
+                    <li>Penser qu'être régulier, c'est ne jamais rater</li>
+                </ul>
+            </div>
+            <div class="info-card success" data-aos="fade-left">
+                <span class="info-card-icon">✅</span>
+                <h3>Ce que ça te permet</h3>
+                <ul>
+                    <li>Agir avec plus de fluidité, sans avoir à te "motiver" en permanence</li>
+                    <li>Tenir dans la durée, même quand c'est un peu flou</li>
+                    <li>Retrouver plus vite ton rythme après une coupure</li>
+                </ul>
+            </div>
+        </div>
+
+        <button class="exercise-button" onclick="openExercise(event)">📝 Voir l'exercice</button>
+
+        <div class="exercise-modal" data-aos="fade-up">
+            <div class="modal-handle"></div>
+            <div class="exercise-content">
+                <h3>📝 Exercice — Ajuste ton langage, structure ton identité</h3>
+                <p>L'objectif ici est de passer d'un langage d'obligation à un langage d'incarnation. Tu ne "fais pas des efforts". Tu construis une version cohérente de toi-même.</p>
+                <div class="exercise-steps">
+                    <div class="exercise-step"><strong>Choisis 2 à 3 domaines dans lesquels tu veux gagner en régularité.</strong> Il peut s'agir de travail, d'énergie, de projets personnels, d'organisation...</div>
+                    <div class="exercise-step"><strong>Reformule tes intentions en partant non plus de ce que tu dois faire, mais de qui tu es en train de devenir.</strong><br>
+                    Utilise la structure : 👉 <em>« Je suis quelqu'un qui... »</em><br><br>
+                    Exemples :<br>
+                    — Je suis quelqu'un qui prend soin de son attention.<br>
+                    — Je suis quelqu'un qui avance chaque jour, même par petits pas.<br>
+                    — Je suis quelqu'un qui crée de la clarté dans ce qu'il fait.</div>
+                    <div class="exercise-step"><strong>Relis ces phrases chaque matin pendant une semaine.</strong> Pas pour te convaincre, mais pour intégrer progressivement cette structure dans ton fonctionnement.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box" data-aos="zoom-in">
+            Tu ne cherches pas simplement à faire plus. Tu cherches à devenir quelqu'un de plus structuré, plus aligné, plus clair. Et tout commence par les mots que tu utilises avec toi-même.
+        </div>
+    </section>
+
+    <!-- Growth Section -->
+    <section class="content-section" id="growth">
+        <div class="content-header" data-aos="fade-right">
+            <span class="content-emoji">🌱</span>
+            <h2 class="content-title">Le pouvoir du « pas encore »</h2>
+        </div>
+
+        <div class="main-content" data-aos="fade-up">
+            <p>Quand quelque chose bloque, ton cerveau cherche une explication rapide :</p>
+            <p>"Je suis nul", "Je ne suis pas fait pour ça", "Ce n'est pas pour moi".</p>
+            <p>Mais dans la grande majorité des cas, ce n'est pas un échec.</p>
+            <p>C'est juste une étape d'apprentissage.</p>
+            <p>Et ce qu'il te manque, ce ne sont pas forcément des compétences.</p>
+            <p>Parfois, ce sont simplement deux mots : "pas encore."</p>
+            <p>👉 <strong><em>"Je n'y arrive pas... pas encore."</em></strong></p>
+            <p>Ce petit ajout change la posture.</p>
+            <p>Il ne minimise pas la difficulté, mais il maintient la porte ouverte.</p>
+            <p>Il transforme une impasse en processus.</p>
+            <p>Et il te rappelle que tu es en construction — pas à l'arrêt.</p>
+        </div>
+
+        <div class="info-cards">
+            <div class="info-card error" data-aos="fade-right">
+                <span class="info-card-icon">❌</span>
+                <h3>Les erreurs à éviter</h3>
+                <ul>
+                    <li>Penser que si ce n'est pas naturel tout de suite, c'est que ce n'est pas pour toi</li>
+                    <li>Abandonner après quelques essais "ratés"</li>
+                    <li>Oublier que toute progression passe par une phase floue</li>
+                </ul>
+            </div>
+            <div class="info-card success" data-aos="fade-left">
+                <span class="info-card-icon">✅</span>
+                <h3>Ce que ça te permet</h3>
+                <ul>
+                    <li>Garder ton élan même quand c'est lent</li>
+                    <li>Mieux vivre les blocages sans te juger</li>
+                    <li>Reprendre plus vite quand tu trébuches</li>
+                </ul>
+            </div>
+        </div>
+
+        <button class="exercise-button" onclick="openExercise(event)">📝 Voir l'exercice</button>
+
+        <div class="exercise-modal" data-aos="fade-up">
+            <div class="modal-handle"></div>
+            <div class="exercise-content">
+                <h3>📝 Exercice — Active le "pas encore"</h3>
+                <p>L'objectif ici est de quitter une logique de blocage pour entrer dans une dynamique d'apprentissage concret.</p>
+                <div class="exercise-steps">
+                    <div class="exercise-step"><strong>Note trois choses que tu n'arrives pas (encore) à faire.</strong> Sois honnête, sans jugement. Ce peut être professionnel, personnel, organisationnel...</div>
+                    <div class="exercise-step"><strong>Ajoute consciemment "pas encore" à chaque phrase.</strong> Ce simple ajustement transforme une conclusion en point de départ.</div>
+                    <div class="exercise-step"><strong>Pour chaque point, identifie une première micro-étape.</strong> Quel est le prochain geste, simple et réalisable en moins de 10 minutes, qui peut te remettre en mouvement ?</div>
+                    <div class="exercise-step"><strong>Choisis-en une et fais-la dans la journée.</strong> Le but n'est pas de tout débloquer d'un coup, mais de relancer la dynamique, un pas après l'autre.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box" data-aos="zoom-in">
+            La différence ne se joue pas sur le talent. Elle se joue dans les mots que tu choisis quand ça devient difficile.
+        </div>
+    </section>
+
+    <!-- Entourage Section -->
+    <section class="content-section" id="entourage">
+        <div class="content-header" data-aos="fade-right">
+            <span class="content-emoji">🤝</span>
+            <h2 class="content-title">Bien s'entourer change tout</h2>
+        </div>
+
+        <div class="main-content" data-aos="fade-up">
+            <p>Tu veux avancer plus vite, garder le cap, tenir sur la durée ?</p>
+            <p>Regarde autour de toi.</p>
+            <p>Ton environnement compte.</p>
+            <p>Souvent plus que tu ne l'imagines.</p>
+            <p>Les bonnes personnes ne font pas les choses à ta place.</p>
+            <p>Mais elles créent un cadre qui te tire vers le haut :</p>
+            <p>Elles recadrent quand tu te disperses.</p>
+            <p>Elles encouragent quand tu doutes.</p>
+            <p>Elles te rappellent que tu n'es pas seul à faire l'effort.</p>
+            <p>À l'inverse, rester entouré de profils négatifs, passifs ou systématiquement sceptiques...</p>
+            <p>C'est prendre le risque de t'alourdir sans même t'en rendre compte.</p>
+            <p><strong>Tu n'as pas besoin de t'isoler pour avancer.</strong></p>
+            <p>Mais tu as besoin de mieux choisir ce — et ceux — qui nourrissent ton énergie, ta clarté, ton rythme.</p>
+        </div>
+
+        <div class="info-cards">
+            <div class="info-card error" data-aos="fade-right">
+                <span class="info-card-icon">❌</span>
+                <h3>Les erreurs à éviter</h3>
+                <ul>
+                    <li>Avancer seul pour "ne pas déranger" ou par fierté</li>
+                    <li>Attendre d'être "meilleur" avant de t'entourer</li>
+                    <li>Partager tes projets avec des personnes qui ne te tirent jamais vers le haut</li>
+                </ul>
+            </div>
+            <div class="info-card success" data-aos="fade-left">
+                <span class="info-card-icon">✅</span>
+                <h3>Ce que ça te permet</h3>
+                <ul>
+                    <li>Reprendre de l'élan quand tu bloques</li>
+                    <li>Gagner en lucidité grâce à un regard extérieur</li>
+                    <li>Te sentir soutenu, sans avoir à te justifier</li>
+                </ul>
+            </div>
+        </div>
+
+        <button class="exercise-button" onclick="openExercise(event)">📝 Voir l'exercice</button>
+
+        <div class="exercise-modal" data-aos="fade-up">
+            <div class="modal-handle"></div>
+            <div class="exercise-content">
+                <h3>📝 Exercice — Renouer avec une connexion utile</h3>
+                <p>L'objectif ici n'est pas de "réseauter", mais de réactiver un lien qui t'aide à avancer dans la bonne direction.</p>
+                <div class="exercise-steps">
+                    <div class="exercise-step"><strong>Identifie une personne qui t'inspire ou qui évolue dans un domaine proche du tien.</strong> Quelqu'un dont l'énergie, la progression ou la posture peut t'apporter de la clarté ou du soutien.</div>
+                    <div class="exercise-step"><strong>Prends contact aujourd'hui.</strong> Un message simple suffit : une question, un retour sur un contenu, une prise de nouvelles. L'important, c'est la sincérité du geste.</div>
+                    <div class="exercise-step"><strong>Note ce que tu retires de cet échange.</strong> Une idée, une phrase, un déclic, une posture différente — capte ce qui peut nourrir ta propre progression.</div>
+                    <div class="exercise-step"><strong>Planifie la suite.</strong> Cela peut être un nouvel échange à prévoir ou une autre personne à contacter dans les jours à venir. Tu poses ainsi un début de régularité dans ton environnement.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box" data-aos="zoom-in">
+            Tu n'as pas besoin de cent personnes autour de toi. Une ou deux connexions de qualité peuvent suffire à redéfinir ta trajectoire. Parfois, mieux t'entourer, c'est déjà commencer à changer de direction.
+        </div>
+    </section>
+
+    <!-- Mental Section -->
+    <section class="content-section" id="mental">
+        <div class="content-header" data-aos="fade-right">
+            <span class="content-emoji">🧼</span>
+            <h2 class="content-title">Protège ton espace mental</h2>
+        </div>
+
+        <div class="main-content" data-aos="fade-up">
+            <p>Tu veux avancer, faire des choix clairs, rester concentré sur l'essentiel ?</p>
+            <p>Commence par observer ce qui entre dans ton esprit au quotidien.</p>
+            <p>Pas uniquement ce que tu choisis consciemment.</p>
+            <p>Mais aussi — et surtout — ce que tu laisses passer sans filtre :</p>
+            <p>notifications, tensions, remarques inutiles, bruits de fond numériques, sollicitations permanentes.</p>
+            <p>Ton attention est limitée.</p>
+            <p>Ton énergie cognitive aussi.</p>
+            <p>Et plus ton environnement est saturé, plus tu avances en mode brouillard : tout devient plus lent, plus confus, plus lourd.</p>
+            <p><strong>Protéger ton espace mental, ce n'est pas te couper du monde.</strong></p>
+            <p>C'est poser un cadre clair pour pouvoir réfléchir, décider et avancer avec lucidité.</p>
+        </div>
+
+        <div class="info-cards">
+            <div class="info-card error" data-aos="fade-right">
+                <span class="info-card-icon">❌</span>
+                <h3>Les erreurs à éviter</h3>
+                <ul>
+                    <li>Rester disponible en permanence, par automatisme ou par peur de louper quelque chose</li>
+                    <li>Laisser des environnements toxiques occuper ta journée sans les remettre en question</li>
+                    <li>Ne jamais créer de moment où tu es <strong>vraiment seul avec toi-même</strong></li>
+                </ul>
+            </div>
+            <div class="info-card success" data-aos="fade-left">
+                <span class="info-card-icon">✅</span>
+                <h3>Ce que ça te permet</h3>
+                <ul>
+                    <li>Reprendre du recul quand tu sens que tout se brouille</li>
+                    <li>Te recentrer plus vite après une distraction ou une tension</li>
+                    <li>Créer un environnement qui soutient tes idées, pas qui les épuise</li>
+                </ul>
+            </div>
+        </div>
+
+        <button class="exercise-button" onclick="openExercise(event)">📝 Voir l'exercice</button>
+
+        <div class="exercise-modal" data-aos="fade-up">
+            <div class="modal-handle"></div>
+            <div class="exercise-content">
+                <h3>📝 Exercice — Nettoyage ciblé de ton attention</h3>
+                <p>L'objectif n'est pas de tout couper, mais de mieux filtrer. Moins de bruit inutile, plus de clarté disponible.</p>
+                <div class="exercise-steps">
+                    <div class="exercise-step"><strong>Pendant une journée, observe ce qui te vide mentalement.</strong> Cela peut être un flux d'e-mails, des notifications constantes, des échanges stériles, des environnements bruyants... Note ce qui t'épuise sans réelle valeur.</div>
+                    <div class="exercise-step"><strong>Choisis une seule source de bruit que tu peux éliminer ou mettre à distance dès demain.</strong> Rien de radical : un ajustement réaliste, ciblé.</div>
+                    <div class="exercise-step"><strong>Établis une règle simple à suivre cette semaine.</strong><br>
+                    Exemples :<br>
+                    — Mode avion une heure par jour<br>
+                    — Aucune notification après 20h<br>
+                    — Pas de consultation d'écran avant le petit-déjeuner<br>
+                    — Silence complet sur une plage horaire fixe</div>
+                    <div class="exercise-step"><strong>Observe l'effet.</strong> Plus d'espace mental ? Moins de dispersion ? Meilleure qualité d'attention ? Note ce que tu remarques — même minime.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box" data-aos="zoom-in">
+            Tu n'as pas besoin de tout contrôler. Mais réduire ce qui t'encombre, même légèrement, peut suffire à remettre de l'ordre dans ta tête. Et parfois, un peu de silence bien placé vaut mieux qu'une énième méthode d'organisation.
+        </div>
+    </section>
+
+    <!-- Corps Section -->
+    <section class="content-section" id="corps">
+        <div class="content-header" data-aos="fade-right">
+            <span class="content-emoji">🏃‍♂️</span>
+            <h2 class="content-title">Ton corps alimente ta clarté</h2>
+        </div>
+
+        <div class="main-content" data-aos="fade-up">
+            <p>Quand tu veux avancer sur un projet, résoudre un problème ou structurer tes idées, ton premier réflexe est souvent de rester assis, concentré, dans l'effort mental.</p>
+            <p>Mais ce fonctionnement a une limite.</p>
+            <p>À force d'immobilité, l'attention baisse, la pensée ralentit, les idées s'enchevêtrent.</p>
+            <p>Tu restes bloqué non parce que tu ne sais pas quoi faire, mais parce que ton système est saturé.</p>
+            <p><strong>Le mouvement — même simple, même court — est un moyen direct de réinitialiser ton système nerveux.</strong></p>
+            <p>Il relance la circulation. Il libère les tensions accumulées. Il fait de la place pour mieux penser.</p>
+            <p>Marcher 10 minutes, changer de position, sortir respirer : ce n'est pas une pause.</p>
+            <p>C'est une stratégie.</p>
+            <p>Tu veux mieux travailler ? Commence par remettre du rythme dans ton corps.</p>
+            <p>C'est souvent là que revient la clarté.</p>
+        </div>
+
+        <div class="info-cards">
+            <div class="info-card error" data-aos="fade-right">
+                <span class="info-card-icon">❌</span>
+                <h3>Les erreurs à éviter</h3>
+                <ul>
+                    <li>Rester assis toute la journée en pensant que "ça ira"</li>
+                    <li>Confondre mouvement et performance (tu n'as pas besoin de faire un exploit)</li>
+                    <li>Garder ton téléphone en main en marchant : tu bouges, mais ton esprit reste figé</li>
+                </ul>
+            </div>
+            <div class="info-card success" data-aos="fade-left">
+                <span class="info-card-icon">✅</span>
+                <h3>Ce que ça te permet</h3>
+                <ul>
+                    <li>Relancer ta concentration sans forcer</li>
+                    <li>Couper avec le flot mental, même en 10 minutes</li>
+                    <li>Revenir dans ton corps, dans l'instant, dans ce que tu fais</li>
+                </ul>
+            </div>
+        </div>
+
+        <button class="exercise-button" onclick="openExercise(event)">📝 Voir l'exercice</button>
+
+        <div class="exercise-modal" data-aos="fade-up">
+            <div class="modal-handle"></div>
+            <div class="exercise-content">
+                <h3>📝 Exercice — La marche sans objectif</h3>
+                <p>L'objectif ici n'est pas de chercher une solution, mais de créer les conditions pour que l'esprit respire à nouveau.</p>
+                <div class="exercise-steps">
+                    <div class="exercise-step"><strong>Sors marcher 15 à 20 minutes, sans téléphone, sans écouteurs, sans distraction.</strong> Rien à écouter, rien à optimiser. Juste marcher.</div>
+                    <div class="exercise-step"><strong>Pendant les 10 premières minutes, laisse ton esprit vagabonder.</strong> Ne cherche rien. Observe. Laisse remonter ce qui remonte.</div>
+                    <div class="exercise-step"><strong>Ensuite, pose-toi une question simple :</strong><br>
+                    <em>Qu'est-ce que j'évite en ce moment ?</em><br>
+                    ou<br>
+                    <em>De quoi ai-je besoin maintenant ?</em></div>
+                    <div class="exercise-step"><strong>Continue de marcher sans chercher à forcer la réponse.</strong> Il ne s'agit pas de "trouver", mais de laisser émerger.</div>
+                    <div class="exercise-step"><strong>En rentrant, note une seule chose :</strong> Une sensation nouvelle, une idée plus claire, ou simplement une direction à suivre.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box" data-aos="zoom-in">
+            Quand tout devient confus, tu n'as pas toujours besoin d'une nouvelle méthode. Parfois, il suffit de remettre du rythme dans ton corps pour que les idées reprennent leur place.
+        </div>
+    </section>
+
+    <!-- Prix Section -->
+    <section class="content-section" id="prix">
+        <div class="content-header" data-aos="fade-right">
+            <span class="content-emoji">🎢</span>
+            <h2 class="content-title">Chaque niveau a un prix</h2>
+        </div>
+
+        <div class="main-content" data-aos="fade-up">
+            <p>Tu veux progresser, passer un cap, changer de rythme ?</p>
+            <p>Très bien. Mais commence par te poser une question simple :</p>
+            <p>👉 <strong>Qu'est-ce que tu es prêt à lâcher pour ça ?</strong></p>
+            <p>Chaque évolution implique un ajustement. Ce n'est pas une punition, c'est la logique du processus.</p>
+            <p>Tu ne montes pas d'un étage avec les automatismes de l'étage d'en dessous.</p>
+            <p>Et souvent, ce qui freine le plus, ce n'est pas le manque d'envie.</p>
+            <p>C'est l'attachement à ce qui rassure, même si ça te ralentit.</p>
+            <p>Un rythme confortable. Une habitude installée. Une posture que tu connais par cœur.</p>
+            <p><strong>Changer, ce n'est pas tout transformer.</strong></p>
+            <p>C'est choisir. Et donc, accepter de renoncer à certaines choses.</p>
+            <p>Pas par sacrifice.</p>
+            <p>Mais pour libérer de l'espace, de l'énergie, et retrouver un élan mieux dirigé.</p>
+        </div>
+
+        <div class="info-cards">
+            <div class="info-card error" data-aos="fade-right">
+                <span class="info-card-icon">❌</span>
+                <h3>Les erreurs à éviter</h3>
+                <ul>
+                    <li>Vouloir changer sans rien enlever — garder les mêmes habitudes, le même rythme, les mêmes distractions... et penser que ça suffira</li>
+                    <li>Sous-estimer ce que la progression demande au quotidien (temps, énergie, clarté)</li>
+                    <li>S'accrocher à ce qui t'alourdit, juste parce que c'est familier</li>
+                </ul>
+            </div>
+            <div class="info-card success" data-aos="fade-left">
+                <span class="info-card-icon">✅</span>
+                <h3>Ce que ça te permet</h3>
+                <ul>
+                    <li>Clarifier ce qui compte vraiment (et ce qui peut partir)</li>
+                    <li>Gagner en énergie en arrêtant de te disperser</li>
+                    <li>Aligner ton quotidien avec ce que tu veux vraiment atteindre</li>
+                </ul>
+            </div>
+        </div>
+
+        <button class="exercise-button" onclick="openExercise(event)">📝 Voir l'exercice</button>
+
+        <div class="exercise-modal" data-aos="fade-up">
+            <div class="modal-handle"></div>
+            <div class="exercise-content">
+                <h3>📝 Exercice — L'équation personnelle du changement</h3>
+                <p>L'objectif ici est de clarifier le rapport entre ce que tu veux atteindre... et ce que tu dois ajuster pour y parvenir.</p>
+                <div class="exercise-steps">
+                    <div class="exercise-step"><strong>Choisis un objectif que tu veux réellement atteindre.</strong> Pas une envie vague, mais une direction concrète que tu veux engager ou accélérer.</div>
+                    <div class="exercise-step"><strong>Trace deux colonnes :</strong><br>
+                    → <em>Ce que cet objectif va t'apporter</em> (bénéfices, gain de temps, clarté, énergie...)<br>
+                    → <em>Ce qu'il va te demander ou te faire perdre</em> (habitudes à lâcher, efforts à fournir, confort à réévaluer)</div>
+                    <div class="exercise-step"><strong>Identifie une chose à mettre à distance cette semaine.</strong> Un réflexe, une distraction, un fonctionnement que tu sais contre-productif — même s'il te rassure.</div>
+                    <div class="exercise-step"><strong>Fais l'essai pendant 7 jours.</strong> Observe ce que ça change, même légèrement : dans ton temps, ton attention, ton énergie ou ta clarté d'action.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box" data-aos="zoom-in">
+            Changer de niveau, ce n'est pas juste vouloir plus. C'est accepter de lâcher ce qui te retient au niveau actuel. Et souvent, ce prix à payer est plus léger qu'on ne l'imagine.
+        </div>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section class="content-section">
+        <div class="content-header" data-aos="fade-right">
+            <span class="content-emoji">🪞</span>
+            <h2 class="content-title">Tu n'as pas besoin de tout changer. Juste de mieux voir.</h2>
+        </div>
+
+        <div class="main-content" data-aos="fade-up">
+            <p>Tu arrives presque au bout de cette édition.</p>
+            <p>Peut-être qu'une idée t'a éclairé, ou qu'un blocage t'a semblé plus net.</p>
+            <p>Et c'est suffisant pour avancer.</p>
+            <p>Tu n'as pas besoin de tout changer.</p>
+            <p>Tu as besoin de mieux comprendre ce que tu fais, et pourquoi tu le fais.</p>
+            <p>D'alléger ce qui encombre. De tester ce qui t'aligne.</p>
+            <p>Et d'avancer un peu plus intentionnellement, un pas après l'autre.</p>
+            <p><strong>Ce n'est pas la quantité d'effort qui fait la différence.</strong></p>
+            <p>C'est la clarté.</p>
+            <p>Répétée. Ajustée. Soutenue.</p>
+        </div>
+
+        <div class="highlight-box" data-aos="zoom-in">
+            Tout est déjà là. Il suffit de faire un peu de place. De remettre de l'intention dans ce que tu construis. Et surtout, de ne pas oublier que changer de niveau, ça commence quand tu assumes ce que tu veux... et ce que tu es prêt à laisser derrière.
+        </div>
+    </section>
+
+    <!-- Tool Section -->
+    <section class="tool-section">
+        <div class="section-header" data-aos="fade-up">
+            <h2>🧠 L'Outil à découvrir : Notebook LM</h2>
+            <p>Le cerveau organisé que tu n'as jamais eu</p>
+        </div>
+
+        <div class="tool-card" data-aos="fade-up" data-aos-delay="100">
+            <p>Notebook LM, c'est un des outils IA les plus puissants et pourtant sous-estimés du moment. Créé par Google et désormais propulsé par Gemini 2.0, il te permet de transformer un amas de fichiers, vidéos ou notes éparpillées... en synthèses claires, idées actionnables, et même podcasts personnalisés.</p>
+            
+            <h3>💡 Ce que tu peux faire concrètement</h3>
+            
+            <div class="tool-features">
+                <div class="tool-feature" data-aos="fade-right" data-aos-delay="200">
+                    <span class="tool-feature-icon">📂</span>
+                    <div>
+                        <strong>Centraliser tout ton contenu</strong>
+                        <p>Glisse tes PDF, notes vocales, Google Docs, vidéos YouTube ou pages web — tout est analysé de manière fiable.</p>
+                    </div>
+                </div>
+                <div class="tool-feature" data-aos="fade-left" data-aos-delay="250">
+                    <span class="tool-feature-icon">💬</span>
+                    <div>
+                        <strong>Poser des questions</strong>
+                        <p>Interagis avec tes contenus comme si tu parlais à un assistant qui les connaît par cœur.</p>
+                    </div>
+                </div>
+                <div class="tool-feature" data-aos="fade-right" data-aos-delay="300">
+                    <span class="tool-feature-icon">📝</span>
+                    <div>
+                        <strong>Créer des synthèses</strong>
+                        <p>Génère des résumés, briefs, FAQ ou timelines en un clic à partir de plusieurs sources.</p>
+                    </div>
+                </div>
+                <div class="tool-feature" data-aos="fade-left" data-aos-delay="350">
+                    <span class="tool-feature-icon">🎧</span>
+                    <div>
+                        <strong>Transformer en podcast</strong>
+                        <p>Convertis des contenus en podcast audio ou génère des scripts à relire et partager.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>🧪 3 cas d'usage concrets</h3>
+            
+            <div class="use-cases">
+                <div class="use-case" data-aos="fade-up" data-aos-delay="400">
+                    <span class="use-case-emoji">🎓</span>
+                    <h4>Préparer une présentation</h4>
+                    <p>Tu importes tous tes cours, articles ou vidéos, tu demandes un résumé et tu obtiens une fiche claire, un quiz ou même des questions types pour t'entraîner.</p>
+                </div>
+                <div class="use-case" data-aos="fade-up" data-aos-delay="450">
+                    <span class="use-case-emoji">💼</span>
+                    <h4>Faire une synthèse pour ton équipe</h4>
+                    <p>Tu rassembles tous les éléments utiles (docs, CR, mails), et Notebook LM te pond un brief cohérent, prêt à envoyer.</p>
+                </div>
+                <div class="use-case" data-aos="fade-up" data-aos-delay="500">
+                    <span class="use-case-emoji">🎧</span>
+                    <h4>Comprendre un sujet rapidement</h4>
+                    <p>Tu colles 2-3 liens vers des vidéos ou articles, tu choisis "podcast audio", et tu reçois une version écoutable en 10 minutes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer data-aos="fade-up">
+        <h2>Le Brief du Lundi</h2>
+        <p>Un point de repère simple, chaque lundi, pour reprendre le contrôle de ton temps, de ton attention et de ta trajectoire.</p>
+        <p>Pas de motivation de surface, ni d'injonctions productivistes. Juste ce qu'il faut pour avancer avec plus de méthode, de cohérence, et de sérénité.</p>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    <button class="back-to-top" onclick="scrollToTop()"><span>↑</span></button>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" onclick="closeExercise()"></div>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

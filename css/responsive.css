@@ -1,0 +1,434 @@
+/* ===================================
+   Le Brief du Lundi - Styles Responsive
+   =================================== */
+
+/* Tablet Styles (768px and up) */
+@media (min-width: 768px) {
+    /* Header */
+    header {
+        padding: 0 40px;
+        height: 70px;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 100px 40px;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .hero-intro {
+        padding: 3rem 2.5rem;
+        max-height: none;
+    }
+
+    .read-more {
+        display: none;
+    }
+
+    /* Features Carousel - Convert to Grid */
+    .features-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        transform: none !important;
+    }
+
+    .feature-card {
+        flex: 1;
+        margin: 0;
+    }
+
+    .carousel-dots {
+        display: none;
+    }
+
+    /* Summary Cards - 2 Column Grid */
+    .summary-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    /* Content Sections */
+    .content-section {
+        padding: 80px 40px;
+    }
+
+    .content-header {
+        margin: -1rem -40px 2rem;
+        padding: 1rem 40px;
+    }
+
+    .main-content {
+        padding: 3rem;
+    }
+
+    /* Info Cards - Horizontal Layout */
+    .info-cards {
+        flex-direction: row;
+    }
+
+    .info-card {
+        flex: 1;
+    }
+
+    /* Exercise Button - Hide on Desktop */
+    .exercise-button {
+        display: none !important;
+    }
+
+    /* Exercise Modal - Static Position */
+    .exercise-modal {
+        position: static;
+        transform: none;
+        background: var(--gradient-1);
+        color: white;
+        border-radius: var(--radius);
+        margin-top: 2rem;
+        max-height: none;
+        display: block;
+    }
+
+    .exercise-modal.active {
+        transform: none;
+    }
+
+    .modal-handle {
+        display: none;
+    }
+
+    .exercise-content h3 {
+        color: white;
+    }
+
+    .exercise-content p {
+        color: rgba(255,255,255,0.9);
+    }
+
+    .exercise-step {
+        color: rgba(255,255,255,0.9);
+    }
+
+    .exercise-step::before {
+        background: white;
+        color: var(--primary);
+    }
+
+    /* Tool Features - 2 Column Grid */
+    .tool-features {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Use Cases - 2 Column Grid */
+    .use-cases {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Section Headers */
+    .section-header h2 {
+        font-size: 2.5rem;
+    }
+
+    /* Content Titles */
+    .content-title {
+        font-size: 2.2rem;
+    }
+
+    /* Summary Section */
+    .summary-section {
+        padding: 80px 40px;
+    }
+
+    /* Tool Section */
+    .tool-section {
+        padding: 80px 40px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 80px 40px;
+    }
+}
+
+/* Desktop Styles (1024px and up) */
+@media (min-width: 1024px) {
+    /* Features - 4 Column Grid */
+    .features-wrapper {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Summary Cards - 3 Column Grid */
+    .summary-cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    /* Content Sections - Max Width */
+    .content-section {
+        padding: 100px 60px;
+        max-width: 900px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .content-header {
+        margin: -1rem 0 2rem;
+        padding: 1rem 0;
+    }
+
+    /* Hero Title */
+    .hero h1 {
+        font-size: 5rem;
+    }
+
+    /* Use Cases - 3 Column Grid */
+    .use-cases {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Tool Card */
+    .tool-card {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+
+/* Large Desktop (1440px and up) */
+@media (min-width: 1440px) {
+    /* Hero Section */
+    .hero {
+        padding: 120px 80px;
+    }
+
+    .hero h1 {
+        font-size: 6rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.8rem;
+    }
+
+    /* Summary Cards - 4 Column Grid */
+    .summary-cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Content Sections */
+    .content-section {
+        max-width: 1200px;
+        padding: 120px 80px;
+    }
+
+    /* Section Headers */
+    .section-header h2 {
+        font-size: 3rem;
+    }
+}
+
+/* Mobile Landscape Orientation */
+@media (max-width: 767px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 60px 20px 40px;
+    }
+
+    .mobile-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 80px 20px;
+    }
+
+    .mobile-menu a {
+        font-size: 1.2rem;
+        flex: 0 0 calc(50% - 0.5rem);
+    }
+}
+
+/* High Resolution Screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Sharper shadows and borders */
+    .summary-card,
+    .main-content,
+    .info-card,
+    .feature-card {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+
+    .summary-card:hover,
+    .main-content:hover,
+    .info-card:hover,
+    .feature-card:hover {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.12), 0 6px 6px rgba(0,0,0,0.24);
+    }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .hero::before,
+    .tool-section::before {
+        animation: none;
+    }
+
+    .logo-emoji,
+    .feature-icon,
+    .content-emoji,
+    .card-emoji,
+    .info-card-icon,
+    .tool-feature-icon,
+    .use-case-emoji {
+        animation: none;
+    }
+}
+
+/* Dark Mode Adjustments */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --primary: #60a5fa;
+        --primary-dark: #3b82f6;
+        --text: #f3f4f6;
+        --text-light: #d1d5db;
+        --background: #0f172a;
+        --surface: #1e293b;
+        --surface-glass: rgba(30, 41, 59, 0.8);
+        --shadow: 0 10px 25px rgba(0,0,0,0.3);
+        --shadow-colored: 0 10px 40px rgba(96, 165, 250, 0.2);
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets */
+    .summary-card,
+    .feature-card,
+    button,
+    a {
+        min-height: 48px;
+    }
+
+    /* Remove hover effects */
+    .summary-card:hover,
+    .feature-card:hover,
+    .info-card:hover,
+    .tool-feature:hover,
+    .use-case:hover {
+        transform: none;
+    }
+
+    /* Increase spacing */
+    .mobile-menu a {
+        padding: 1rem 1.5rem;
+    }
+
+    /* Disable custom cursor */
+    .cursor,
+    .cursor-follower {
+        display: none !important;
+    }
+}
+
+/* Ultra-wide Screens (2560px and up) */
+@media (min-width: 2560px) {
+    /* Center content with max-width */
+    .hero,
+    .summary-section,
+    .tool-section,
+    footer {
+        max-width: 2000px;
+        margin: 0 auto;
+    }
+
+    /* Larger typography */
+    .hero h1 {
+        font-size: 7rem;
+    }
+
+    .section-header h2 {
+        font-size: 4rem;
+    }
+
+    .content-title {
+        font-size: 3rem;
+    }
+
+    /* 6 Column Grid for Summary Cards */
+    .summary-cards {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+/* Small Mobile (375px and below) */
+@media (max-width: 375px) {
+    /* Smaller typography */
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .content-title {
+        font-size: 1.5rem;
+    }
+
+    /* Reduced padding */
+    .hero {
+        padding: 60px 15px 30px;
+    }
+
+    .content-section {
+        padding: 40px 15px;
+    }
+
+    .main-content {
+        padding: 1.5rem;
+    }
+
+    /* Smaller cards */
+    .summary-card {
+        padding: 1rem;
+    }
+
+    .card-emoji {
+        font-size: 1.5rem;
+    }
+}
+
+/* Foldable Devices Support */
+@media (min-width: 768px) and (max-width: 1024px) and (min-aspect-ratio: 1/1) {
+    /* Optimize for square-ish screens */
+    .summary-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
